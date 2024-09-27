@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+* {
+    box-sizing: inherit; /* Set box-sizing for all elements */
+}
+header {
+    background: #4d647d;
+    color: rgb(252, 186, 87);
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Padding around links */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for effects */
+    border-radius: 5px; /* Rounded corners */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+nav a:hover {
+    background-color: #4bc9f7; /* Lighten background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    
+}
+nav a.active {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background: white;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+}
+
+.project-description {
+    margin-top: 10px;
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #81bbfa;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.project-image {
+    width: 100%; /* Make the image take full width of the container */
+    max-width: 600px; /* Optional: limit the max width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the image */
+    margin: 15px auto; /* Add some margin */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-image1 {
+    width: 100%; /* Make the image take full width of the container */
+    max-width: 400px; /* Optional: limit the max width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the image */
+    margin: 15px auto; /* Add some margin */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-image:hover,
+.project-image1:hover {
+    transform: scale(2); /* Slightly increase size on hover */
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.4); /* Golden glow effect */
+}
+.Highlight{
+color: darkgoldenrod;
+}
+
+
+/* Animation for Floating Lights */
+
+
+/* Optional: Add a subtle glow around the card itself */
+.project-card {
+    position: relative;
+    background-color: rgb(197, 199, 198); /* Ensure the card can contain absolute elements */
+}
+
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(110, 110, 110, 0.957), 0 0 40px rgba(255, 215, 0, 0.3); /* Golden glow */
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s; /* Smooth transition for the glow */
+}
+
+.project-card:hover::after {
+    opacity: 1; /* Show glow effect on hover */
+}

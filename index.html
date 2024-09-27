@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Dinesh Kumar</h1>
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav id="navbar">
+            <a href="#about">About</a>
+            <a href="#academics">Academics</a>
+            <a href="#project">Projects</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+        <section id="about">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>He is Dinesh Kumar, a recent gradute with a degree in ELECTRICAL AND ELETRONICS ENGINEERING.Throughout his academic journey he acquired extensive knowledge and practical experience in the electrical domain.
+                        Currently, he is pursuing a Master’s in Information Technology (MSIT) at IIIT Hyderabad. His goal is to create engaging and user-friendly experiences that hat make a significant impact.</p>
+                    <p>Beyond my academic achievements, I have a strong passion for kabaddi and enjoy staying active through sports. When I'm not coding, you can find me at the gym or on the playing field, embracing dynamic and energetic environments.</p>
+                </div>
+                <div class="about-image">
+                    <img src="photo.jpg" alt="Description of the image" class="responsive-img">
+                </div>
+            </div>
+        </section>
+        
+        <section id="academics">
+            <div class="academics-container">
+                <h2>Academics</h2>
+
+                <div class="slider">
+                    <input type="radio" id="slide1" name="slider" checked>
+                    <input type="radio" id="slide2" name="slider">
+                    <input type="radio" id="slide3" name="slider">
+                    
+                    <div class="slides">
+                        
+                        <div class="slide">
+                            <h3>Schooling</h3>
+                            <p><strong>Sunflower High School</strong>, 2018</p>
+                            <p>Achievements: Top of the class, participated in various science fairs and sports events.</p>
+                        </div>
+                        <div class="slide">
+                            <h3>Intermediate</h3>
+                            <p><strong>Sri Sarada Sunflower Junior College</strong>, 2018-2020</p>
+                            <p>Achievements: Scored high in entrance exams, participated in various academic competitions.</p>
+                        </div>
+                        <div class="slide">
+                            <h3>B.Tech in Electrical and Electronics Engineering</h3>
+                            <p><strong>Gudlavalleru Engineering College</strong>, 2020 - 2024</p>
+                            <p>Relevant Coursework: Electrical Circuits, Control Systems, Power Electronics, Electrical Machines.</p>
+                            <p>Achievements: Completed a major project on power systems, actively participated in technical workshops.</p>
+                        </div>
+                        <!-- Add more slides as needed -->
+                    </div>
+
+                    <div class="controls">
+                        <label for="slide1" class="control-button">1</label>
+                        <label for="slide2" class="control-button">2</label>
+                        <label for="slide3" class="control-button">3</label>
+                        <!-- Add more control buttons as needed -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="project">
+            <div class="ex-container">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <img src="photo2.jpeg" alt="Project 1" class="project-image">
+                    <h3>Substation Monitoring And Controlling Unit</h3>
+                    <p>To ensure the substation is run efficiently, control and monitoring systems are needed. 
+                        These systems should display the current status of all plant equipment, including alarms and secondary system indicators. 
+                        They should also provide digital outputs to open and close switchgear, raise and 
+                        lower taps on transformers, and show analogue values for key parameters like voltage, current, megawatts, and megavars.</p>
+                    <a href="Project.html" class="view-project-button">View Project</a>
+                </div>
+            </div>
+        </section>
+        <section id="resume">
+            <div class="resume-container">
+                <h2>Resume</h2>
+                <p>Click the button below to view or download my resume.</p>
+                <a href="https://drive.google.com/file/d/1-0DvSRmTaY8rWiHuA8-cOLQeck4fzFgO/view?usp=drive_link" class="view-button" target="_blank">View Resume</a>
+            </div>
+        </section>
+        <section id="contact">
+            <div class="contact-container">
+                <h2>Contact</h2>
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/dinesh-kumar-arige-5275a4246?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/dinesh43431" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:dinesh.arige@gmail.com" class="social-link" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>               
+            </div>
+        </section>
+        <footer>
+            <p>© 2024 My Portfolio</p>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.getElementById('menu-toggle');
+                const navbar = document.getElementById('navbar');
+                const navLinks = document.querySelectorAll('nav a');
+        
+                menuToggle.addEventListener('click', () => {
+                    navbar.classList.toggle('active'); // Toggle the active class
+                });
+        
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        navbar.classList.remove('active'); // Close menu on link click
+                        navLinks.forEach(l => l.classList.remove('active'));
+                        link.classList.add('active');
+                    });
+                });
+        
+                window.addEventListener('scroll', () => {
+                    const sections = document.querySelectorAll('section');
+                    let current = '';
+        
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.clientHeight; 
+                        if (pageYOffset >= sectionTop - 50 && pageYOffset < sectionTop + sectionHeight) {
+                            current = section.getAttribute('id');
+                        }
+                    });
+        
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${current}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                });
+            });
+        </script
+</body>
+</html>
